@@ -5,23 +5,23 @@
                 <p>SJB, USA</p>
             </div>
             <div class="col-4 text-right">
-                <h4 class="">13&deg;</h4>
+                <h4 class="">{{ weatherData.temp | number: '.0-0' }}&deg;</h4>
             </div>
         </div>
     </div>
     <div class="card-block">
         <h1>0</h1>
-        <p>Cloudy with a chance of meatballs</p>
+        <p>{{weatherData.summary}}</p>
     </div>
     <div class="card-footer">
         <div class="row">
             <div class="col-5">
                 <p>Wind:</p>
-                <p>93mph</p>
+                <p>{{weatherData.wind | speedUnit: currentSpeedUnit }}</p>
             </div>
             <div class="col-5 offset-2">
                 <p>Humidity:</p>
-                <p>80%</p>
+                <p>{{weatherData.humidity | percent}}</p>
             </div>
         </div>
     </div>

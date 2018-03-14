@@ -15,12 +15,8 @@ export class WeatherService {
         if (navigator.geolocation) {
             return Observable.create(observer => {
                 navigator.geolocation.getCurrentPosition(pos => {
-                    observer.next(pos)
-
-                }),
-                    err => {
-                        return Observable.throw(err);
-                    });
+                    observer.next(pos);
+                }), err => { return Observable.throw(err) });
         } else {
             return Observable.throw("Geolocation is not available.")
         }

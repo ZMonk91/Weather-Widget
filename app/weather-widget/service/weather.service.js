@@ -24,10 +24,7 @@ let WeatherService = class WeatherService {
             return Observable_1.Observable.create(observer => {
                 navigator.geolocation.getCurrentPosition(pos => {
                     observer.next(pos);
-                }),
-                    err => {
-                        return Observable_1.Observable.throw(err);
-                    };
+                }), err => { return Observable_1.Observable.throw(err); };
             });
         }
         else {
